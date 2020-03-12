@@ -20,7 +20,6 @@
 	array2.length === 0 ? '배열이 비어있습니다.' : '배열이 비어있지 않습니다.';
     onsole.log(text2);
 ```
-
 ## 02. Truthy and Falsy (falsy한 값 5가지 알아두기)
   - Truthy : true 같은거...
   - Falsy : false 같은거.... 
