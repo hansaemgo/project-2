@@ -56,7 +56,42 @@ const dog2 = {
 	name: '뭉뭉이'
 };
 function getName2(animal) {
-	return animal && animal.name;
+	return animal && animal.name; // &&연산자 사용하여 코드 단축
 }
 const name2 = getName2(dog2);
 console.log(name2);
+
+/* ------------------------------------------------------*/
+
+// const object = { name: '고한샘' };
+const object = null; // false 값
+const name3 = object && object.name; // false가 앞에 있으면  결과값은 앞
+console.log(name3); // null
+
+// const namelessDog = { name: '' };
+
+// function getNameDog(animal) {
+// 	const dogName = animal && animal.name;
+// 	if (!dogName) {
+// 		return '이름이 없는 동물입니다.';
+// 	}
+// 	return dogName;
+// }
+
+// const dogName = getNameDog(namelessDog);
+// console.log(dogName);
+
+const namelessDog = { name: '' };
+
+function getNameDog(animal) {
+	const dogName = animal && animal.name;
+	return dogName || '이름이 없는 동물입니다.';
+}
+
+const dogName = getNameDog(namelessDog);
+console.log(dogName);
+
+console.log(false || 'hello'); // 'hello'
+console.log('' || '이름없다'); // 이름없다
+
+console.log(undefined || 'defined 되지않았다'); //defined 되지않았다

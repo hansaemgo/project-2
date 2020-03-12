@@ -62,10 +62,50 @@
 
   ### <b> && 연산자로 코드 단축시키기 </b>
   - A && B  : A가 Truthy한 값이라면 결과는 B, A가 Falsy한 값이라면 결과는 A
-      ```javascript
-      console.log(true && 'hello'); // hello
-      console.log('hello' && 'bye'); // bye
-      console.log(null && 'hello'); // null
-      console.log(undefined && 'bye'); // undefined     
-      ``` 
-    
+  - 특정값이 유효할 때 만, 특정값을 조회해야할 때, 주로 사용한다.
+    ```javascript
+    // const object = { name: '고한샘' }; // true 제대로된 값이면 이름이 나온다
+    const object = null; // false 값
+    const name3 = object && object.name; // false가 앞에 있으면  결과값은 앞
+    console.log(name3); // null
+    ```
+    ```javascript
+    console.log(true && 'hello'); // hello
+    console.log('hello' && 'bye'); // bye
+    console.log(null && 'hello'); // null
+    console.log(undefined && 'bye'); // undefined     
+    ``` 
+
+  ### <b> || 연산자로 코드 단축시키기 </b>  
+  - A || B : 어떤 값이 Falsy 하다면 대체할 값을 지정해 줄 때 유용하게 사용할 수 있다.
+  - 기존코드
+  ```javascript
+  const namelessDog = { name: '' };
+  function getNameDog(animal) {
+    const dogName = animal && animal.name;
+    if (!dogName) {
+      return '이름이 없는 동물입니다.';
+    }
+    return dogName;
+  }
+
+  const dogName = getNameDog(namelessDog);
+  console.log(dogName);  // '이름이 없는 동물입니다.'
+  ```
+  - 단축코드 
+  ```javascript
+  const namelessDog = { name: '' };
+
+    function getNameDog(animal) {
+      const dogName = animal && animal.name;
+      return dogName || '이름이 없는 동물입니다.';
+    }
+
+  const dogName = getNameDog(namelessDog);
+  console.log(dogName); // '이름이 없는 동물입니다.'
+  ```
+  ```javascript
+  console.log(false || 'hello'); // 'hello'
+  console.log('' || '이름없다'); // 이름없다
+  console.log(undefined || 'defined 되지않았다'); //defined 되지않았다
+  ```
