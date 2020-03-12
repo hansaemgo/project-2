@@ -60,13 +60,12 @@
   console.log(name2); // 뭉뭉이
   ```
 
-    ### <b> && 연산자로 코드 단축시키기 </b>
-
-      - A && B  : A가 Truthy한 값이라면 결과는 B, A가 Falsy한 값이라면 결과는 A
-        ```javascript
-        console.log(true && 'hello'); // hello
-        console.log('hello' && 'bye'); // bye
-        console.log(null && 'hello'); // null
-        console.log(undefined && 'bye'); // undefined     
-        ``` 
+  ### <b> && 연산자로 코드 단축시키기 </b>
+  - A && B  : A가 Truthy한 값이라면 결과는 B, A가 Falsy한 값이라면 결과는 A
+      ```javascript
+      console.log(true && 'hello'); // hello
+      console.log('hello' && 'bye'); // bye
+      console.log(null && 'hello'); // null
+      console.log(undefined && 'bye'); // undefined     
+      ``` 
     
