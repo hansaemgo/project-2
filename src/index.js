@@ -95,3 +95,5 @@ console.log(false || 'hello'); // 'hello'
 console.log('' || '이름없다'); // 이름없다
 
 console.log(undefined || 'defined 되지않았다'); //defined 되지않았다
+
+/* ------------------------------------------------------*/
