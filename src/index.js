@@ -26,3 +26,37 @@ console.log(!''); //true
 
 /////////////////////단축평가논리계산법//////////////////////////////
 ////////////////////////////////////////////////////////////////////
+
+console.log(true && 'hello'); // true && true
+console.log(!3); // false
+console.log(true && 'hello');
+console.log('hello' && 'bye'); // bye
+console.log(null && 'hello'); // null
+console.log(undefined && 'bye'); // undefined
+
+/* ------------------------------------------------------*/
+
+const dog = {
+	name: '멍멍이'
+};
+
+function getName(animal) {
+	if (animal) {
+		return animal.name;
+	}
+	return undefined;
+}
+
+/* ------------------------------------------------------*/
+
+const name = getName(dog);
+console.log(name);
+
+const dog2 = {
+	name: '뭉뭉이'
+};
+function getName2(animal) {
+	return animal && animal.name;
+}
+const name2 = getName2(dog2);
+console.log(name2);

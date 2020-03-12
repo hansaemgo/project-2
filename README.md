@@ -31,3 +31,42 @@
     console.log(!NaN); //true
     console.log(!''); //true
 ```
+
+## 03. 단축 평가 논리 (short-circuit evaluation) 계산법
+  - 논리 연산자 : 양옆의 값을 비교하여 true 인지 false인지 확인
+  - 기존코드
+  ``` javascript
+  const dog = {
+	name: '멍멍이'
+  };
+  function getName(animal) {
+    if (animal) {
+      return animal.name;
+    }
+    return undefined;
+  }
+  const name = getName();
+  console.log(name); // undefined
+  ```
+  - 단축코드
+  ```javascript
+  const dog2 = {
+	name: '뭉뭉이'
+  };
+  function getName2(animal) {
+    return animal && animal.name;
+  }
+  const name2 = getName2(dog2);
+  console.log(name2); // 뭉뭉이
+  ```
+
+    ### <b> && 연산자로 코드 단축시키기 </b>
+
+      - A && B  : A가 Truthy한 값이라면 결과는 B, A가 Falsy한 값이라면 결과는 A
+        ```javascript
+        console.log(true && 'hello'); // hello
+        console.log('hello' && 'bye'); // bye
+        console.log(null && 'hello'); // null
+        console.log(undefined && 'bye'); // undefined     
+        ``` 
+    
