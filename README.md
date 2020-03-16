@@ -156,4 +156,4 @@ console.log(undefined || 'defined 되지않았다'); //defined 되지않았다
     console.log(area);
     ```
 
--
+## 0. 조건문 더 스마트 하게 쓰기
