@@ -129,3 +129,31 @@ console.log(undefined || 'defined 되지않았다'); //defined 되지않았다
 ## 04. 함수의 기본 파라미터
 
 -   함수를 호출할 때, 기본 값으로 넣어주어야 하는 파라미터를 넣어주지 않을때,
+-   ex) 원의 넓이 구하는 함수
+    ```javascript
+    function calculateCircleArea(r) {
+    	return Math.PI * r * r; //  Math.PI : 원주율 (파이)
+    }
+    const area = calculateCircleArea(4);
+    console.log(area); // 50.26548245743669
+    ```
+-   이 함수에 r값을 넣으주지 않으면 `console.log(area); NaN`
+-   r값이 주어지지 않으면 기본 값 1을 사용하게 설정 하기
+
+    ```javascript
+    // ES%방법
+    function calculateCircleArea(r) {
+    	const radius = r || 1;
+    	return Math.PI * radius * radius;
+    }
+    // ES6 방법
+    function calculateCircleArea(r = 1) {
+    	const radius = r || 1;
+    	return Math.PI * radius * radius;
+    }
+
+    const area = calculateCircleArea();
+    console.log(area);
+    ```
+
+-
